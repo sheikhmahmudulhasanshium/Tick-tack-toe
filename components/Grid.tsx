@@ -42,7 +42,7 @@ export default function Grid()  {
     //grid-items
     const gridItems=inputValue.map((item)=>{
         return <div className=
-        'flex items-center justify-center w-20 h-20 text-2xl font-extrabold bg-gray-300 from-neutral-700 dark: text-slate-400 dark:bg-slate-900' 
+        'flex items-center justify-center w-20 h-20 text-2xl font-extrabold bg-gray-300 from-neutral-700 dark: text-slate-400 dark:bg-slate-900 hover:bg-lime-500' 
         key={item.id} onClick={()=>changeValue(item.id)}>{item.value}</div>}
         )
 
