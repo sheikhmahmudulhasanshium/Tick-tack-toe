@@ -64,8 +64,8 @@ const Sidebar = () => {
       }>Email</button>
       <div className='flex flex-col justify-center py-2 pb-2 dark:text-white' >
         <h4>Scan QR For More Info:</h4> 
+        <a href="https://shium-portfolio.vercel.app/"><Image src="/./images/QR-Code.png" alt="https://shium-portfolio.vercel.app/ " height='200' width='200' quality={100}  /></a>
         
-        <Image src="/./images/QR-Code.png" alt="QR " height='200' width='200' quality={100} />
       </div>
     </div>
     </div>
