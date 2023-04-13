@@ -22,7 +22,7 @@ const Sidebar = () => {
   
   return (
     <div className='flex flex-col items-center justify-center'>
-    < div  className='flex flex-col items-center justify-center mb-4 overflow-y-auto rounded-lg dark:bg-gray-300' >
+    < div  className='flex flex-col items-center justify-center mb-4 overflow-y-auto bg-gray-400 rounded-lg dark:bg-gray-300' >
       <Image src="https://media.licdn.com/dms/image/D5603AQFj6n7Sn2GwEQ/profile-displayphoto-shrink_800_800/0/1675445160674?e=1684368000&v=beta&t=nEQiCGYmbxDyYcIpO1LhSxqTUnd8TTOAvld2zWB2Ku4" 
       className='py-2 mx-auto rounded-full' height='228' width='228' layout='intrinsic' quality='100'
       alt="Profile-Pic"/>
@@ -63,8 +63,8 @@ const Sidebar = () => {
        onClick={()=>window.open('mailto:sheikh.mamhmudul.hasan.shium.aiub@gmail.com')
       }>Email</button>
       <div className='flex flex-col justify-center py-2 pb-2 dark:text-white' >
-        <h4>Scan QR For More Info:</h4> 
-        <a href="https://shium-portfolio.vercel.app/"><Image src="/./images/QR-Code.png" alt="https://shium-portfolio.vercel.app/ " height='200' width='200' quality={100}  /></a>
+        <h4>Click/Scan QR for More Info:</h4> 
+        <a href="https://shium-portfolio.vercel.app/"><Image src="/images/QR-Code.png" alt="https://shium-portfolio.vercel.app/ " height='200' width='200' quality={100}  /></a>
         
       </div>
     </div>
