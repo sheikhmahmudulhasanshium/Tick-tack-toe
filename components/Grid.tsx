@@ -31,8 +31,26 @@ export default function Grid()  {
             else{setInitialValue('O')}
             }
       //console.log(initialValue)
-      
-        }
+    /* basic
+     setInputValue(inputValue.map((item)=>
+      {return {
+        
+        ...item,
+        value:initialValue}}))
+            
+        }*/
+       // partially working
+        inputValue.map((prevValue)=>{
+            if(prevValue.id===clickedIndex){
+                setInputValue(inputValue.map(()=>{return{...prevValue,value:initialValue}})
+                    )
+                
+            }
+        })
+        //doesnt work 
+        //inputValue.map((prevValue)=>(prevValue.id === clickedIndex) ? setInputValue( (inputValue.map((prevValue) => { return { ...prevValue,value:initialValue } }))) : setInputValue((inputValue.map((prevValue) => { return { ...prevValue } }))))
+        
+    }
     function gridClickHandler(){
        countNo===9? setCountNo(0):setCountNo(countNo+1)
        playerNo===1? setPlayerNo(2):setPlayerNo(1)
