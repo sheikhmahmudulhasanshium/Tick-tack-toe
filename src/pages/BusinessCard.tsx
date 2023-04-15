@@ -45,10 +45,10 @@ const Sidebar = () => {
         href='/assets/Corrected_cv.pdf' className='flex items-center justify-center px-2 py-2 my-3 rounded-full bg-shiumcustom dark:text-white' download='CV-Of-Sheikh-Mahmudul-Hasan-Shium' target='_blank'><div className='w-5 h-5'><GiTie /></div>Download Resume</motion.a>
         </div>
       {/*Social Media*/}
-      <div className='flex justify-around w-9/12 mx-auto my-5 text-shiumcustom dark:text-white md:w-full'>
-        <a href="https://github.com/sheikhmahmudulhasanshium" target={'_blank'}><div className='cursor-pointer h-25 w-25'><AiFillGithub   /></div></a>
-        <a href="https://www.linkedin.com/in/sheikh-mahmudul-hasan-shium-5b5938189/" target={'_blank'}><div  className="cursor-pointer h-25 w-25"><AiFillLinkedin /></div></a>
-        <a href="https://www.facebook.com/skmahmudul.hasanshium" target={'_blank'}><div className='cursor-pointer h-25 w-25'><AiFillFacebook /></div></a>
+      <div className='flex justify-around w-8/12 mx-auto my-5 text-shiumcustom dark:text-white md:w-full'>
+        <a href="https://github.com/sheikhmahmudulhasanshium" target={'_blank'}><AiFillGithub className='cursor-pointer h-25 w-25'/></a>
+        <a href="https://www.linkedin.com/in/sheikh-mahmudul-hasan-shium-5b5938189/" target={'_blank'}><AiFillLinkedin className="cursor-pointer h-25 w-25"/></a>
+        <a href="https://www.facebook.com/skmahmudul.hasanshium" target={'_blank'}><AiFillFacebook className='cursor-pointer h-25 w-25' /></a>
       </div>
       {/*address*/}
       <div className='py-4 my-5 bg-shiumcustom dark:text-white'style={{marginLeft:'-0.01rem',marginRight:'-0.01rem'}}>
@@ -62,7 +62,7 @@ const Sidebar = () => {
        
        onClick={()=>window.open('mailto:sheikh.mamhmudul.hasan.shium.aiub@gmail.com')
       }>Email</button>
-      <div className='flex flex-col justify-center py-2 pb-2 dark:text-white' >
+      <div className='flex flex-col justify-center py-2 pb-2 dark:text-black' >
         <h4>Click/Scan QR for More Info:</h4> 
         <a href="https://shium-portfolio.vercel.app/"><Image src="/images/QR-Code.png" alt="https://shium-portfolio.vercel.app/ " height='200' width='200' quality={100}  /></a>
         

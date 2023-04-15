@@ -28,7 +28,7 @@ const Navbar = () => {
     const {pathname}=useRouter()
     
     React.useEffect(()=>{
-        if(pathname==="/" )setActiveItem('Game')
+        if(pathname==="" )setActiveItem('Game')
         if(pathname==="/BusinessCard" )setActiveItem('About')
         if(pathname==="/Settings" )setActiveItem('Settings')
     }, 

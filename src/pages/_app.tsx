@@ -1,11 +1,11 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import Sidebar from './Settings'
+
 import Navbar from '../../components/Navbar'
 import {ThemeProvider} from 'next-themes'
 import {AnimatePresence} from 'framer-motion'
 import useSound from 'use-sound';
-
 
  
 
