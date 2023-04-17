@@ -22,34 +22,34 @@ export default function Grid()  {
             else if(inputValue[2]===inputValue[5] && inputValue[5]===inputValue[8]){
                 (inputValue[5]==="X")?setWinner("Player 1"):setWinner("Player 2")
             }
-            else{
+        
                 //Check row wise values
-                    if(inputValue[0]===inputValue[1] && inputValue[1]===inputValue[2]){
+            else if(inputValue[0]===inputValue[1] && inputValue[1]===inputValue[2]){
                         (inputValue[1]==="X")?setWinner("Player 1"):setWinner("Player 2")
                     }
                     //row-2
-                    else if(inputValue[3]===inputValue[4] && inputValue[4]===inputValue[5]){
+            else if(inputValue[3]===inputValue[4] && inputValue[4]===inputValue[5]){
                         (inputValue[4]==="X")?setWinner("Player 1"):setWinner("Player 2")
                     }
                     //row-3
-                    else if(inputValue[6]===inputValue[7] && inputValue[7]===inputValue[8]){
+            else if(inputValue[6]===inputValue[7] && inputValue[7]===inputValue[8]){
                         (inputValue[7]==="X")?setWinner("Player 1"):setWinner("Player 2")
                     }
-                    else{
+                    
                         //check diagonal values
-                        if(inputValue[0]===inputValue[4] && inputValue[4]===inputValue[8]){
-                            (inputValue[4]==="X")?setWinner("Player 1"):setWinner("Player 2")
+            else if(inputValue[0]===inputValue[4] && inputValue[4]===inputValue[8]){
+                    (inputValue[4]==="X")?setWinner("Player 1"):setWinner("Player 2")
                         }
-                        else if(inputValue[2]===inputValue[4] && inputValue[4]===inputValue[6] ){
-                            (inputValue[4]==="X")?setWinner("Player 1"):setWinner("Player 2")
+            else if(inputValue[2]===inputValue[4] && inputValue[4]===inputValue[6] ){
+                    (inputValue[4]==="X")?setWinner("Player 1"):setWinner("Player 2")
                         }
-                        else{
+            else{
                             setWinner("Draw")
                         }
 
                     }                    
-                }
-        }
+                
+        
     }
     
     function changeValue(clickedIndex: number){
