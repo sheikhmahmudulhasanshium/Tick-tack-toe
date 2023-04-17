@@ -1,79 +1,99 @@
-import React, { use, useState } from 'react'
+import React, { useState } from 'react'
 
 export default function Grid()  {
     
     const[playerNo,setPlayerNo]=useState(1)
     const[countNo,setCountNo]=useState(0)
-    const [initialValue,setInitialValue]=useState(' ')
-    
-    const [inputValue,setInputValue]=useState([
-        {id:1,value:initialValue},
-        {id:2,value:initialValue},
-        {id:3,value:initialValue},
-        {id:4,value:initialValue},
-        {id:5,value:initialValue},
-        {id:6,value:initialValue},
-        {id:7,value:initialValue},
-        {id:8,value:initialValue},
-        {id:9,value:initialValue}      
-        ])
+    const [inputValue,setInputValue]=useState([' ',' ',' ',' ',' ',' ',' ',' ',' '])
+    let [winner,setWinner]=useState(' ')
+    function gameLogic()
+    {
+        if(countNo>=4 && countNo<=9){
+           //Check colum wise values
+            //col-1
+            if(inputValue[0]===inputValue[3] && inputValue[6]===inputValue[3] && inputValue[3]==="X"||"O"){
+                (inputValue[3]==="X")?setWinner("Player 1"):setWinner("Player 2")
+            }
+            //col-2
+            else if(inputValue[1]===inputValue[4] && inputValue[4]===inputValue[7] && inputValue[4]==="X"||"O"){
+                (inputValue[4]==="X")?setWinner("Player 1"):setWinner("Player 2")
+            }
+            //col-3
+            else if(inputValue[2]===inputValue[5] && inputValue[5]===inputValue[8] && inputValue[5]==="X"||"O"){
+                (inputValue[5]==="X")?setWinner("Player 1"):setWinner("Player 2")
+            }
+            else{
+                //Check row wise values
+                    if(inputValue[0]===inputValue[1] && inputValue[1]===inputValue[2] && inputValue[1]==="X"||"O"){
+                        (inputValue[1]==="X")?setWinner("Player 1"):setWinner("Player 2")
+                    }
+                    //row-2
+                    else if(inputValue[3]===inputValue[4] && inputValue[4]===inputValue[5] && inputValue[4]==="X"||"O"){
+                        (inputValue[4]==="X")?setWinner("Player 1"):setWinner("Player 2")
+                    }
+                    //row-3
+                    else if(inputValue[6]===inputValue[7] && inputValue[7]===inputValue[8] && inputValue[7]==="X"||"O"){
+                        (inputValue[7]==="X")?setWinner("Player 1"):setWinner("Player 2")
+                    }
+                    else{
+                        //check diagonal values
+                        if(inputValue[0]===inputValue[4] && inputValue[4]===inputValue[8] && inputValue[4]==="X"||"O"){
+                            (inputValue[4]==="X")?setWinner("Player 1"):setWinner("Player 2")
+                        }
+                        else if(inputValue[2]===inputValue[4] && inputValue[4]===inputValue[6] && inputValue[4]==="X"||"O"){
+                            (inputValue[4]==="X")?setWinner("Player 1"):setWinner("Player 2")
+                        }
+                        else{
+                            setWinner("Draw")
+                        }
+
+                    }                    
+                }
+        }
+    }
     
     function changeValue(clickedIndex: number){
-      //  
-      //console.log(clickedIndex)
-      // toggle X for player 1 toggle O for player 2
-        if(initialValue===' ' ){
-            if(playerNo===1){setInitialValue('X')}
-            else{setInitialValue('O')}
-        }
-        else {
-            if(playerNo===1){setInitialValue('X')}
-            else{setInitialValue('O')}
-            }
-      //console.log(initialValue)
-    /* basic
-     setInputValue(inputValue.map((item)=>
-      {return {
+        gridClickHandler()
         
-        ...item,
-        value:initialValue}}))
-            
-        }*/
-       // partially working
-        inputValue.map((prevValue)=>{
-            if(prevValue.id===clickedIndex){
-                setInputValue(inputValue.map(()=>{return{...prevValue,value:initialValue}})
-                    )
-                
-            }
-        })
-        //doesnt work 
-        //inputValue.map((prevValue)=>(prevValue.id === clickedIndex) ? setInputValue( (inputValue.map((prevValue) => { return { ...prevValue,value:initialValue } }))) : setInputValue((inputValue.map((prevValue) => { return { ...prevValue } }))))
+      // toggle X for player 1 toggle O for player 2
+        if(inputValue[clickedIndex]===' ' ){
+            if(playerNo===1){
+                inputValue[clickedIndex]='X'
+                setInputValue(inputValue)}
+            else{
+                inputValue[clickedIndex]='O'
+                setInputValue(inputValue)}
+        }
+        gameLogic()
+        //console.log(InputValue)
+       //console.log(clickedIndex)
         
     }
     function gridClickHandler(){
-       countNo===9? setCountNo(0):setCountNo(countNo+1)
-       playerNo===1? setPlayerNo(2):setPlayerNo(1)
+       if(countNo===9) {setCountNo(0)}else setCountNo(countNo+1)
+       if( playerNo===1 ){setPlayerNo(2)} else setPlayerNo(1)
       
       
     }
     //grid-items
-    const gridItems=inputValue.map((item)=>{
+    const gridItems=inputValue.map((item,index)=>{
         return <div className=
         'flex items-center justify-center w-20 h-20 text-5xl font-extrabold bg-gray-300 from-neutral-700 dark: text-slate-400 dark:bg-slate-900 hover:bg-lime-500 dark:hover:bg-lime-400' 
-        key={item.id} onClick={()=>changeValue(item.id)}>{item.value}</div>}
+        key={index} onClick={()=>changeValue(index)}>{item}</div>}
         )
-
+        console.log(winner);
   return (
+    
     <div className='flex flex-col py-2 jusify-center'>
         {/*grid container*/}
-        <div className='grid grid-cols-3 gap-1 p-2 ' onClick={gridClickHandler}>
+        <div className='grid grid-cols-3 gap-1 p-2 ' >
             {gridItems}
         </div>
         {/**count and turn */}
         <div className='flex-col px-2 py-3 font-bold bg-gray-400 text-slate-900 dark:text-white dark:bg-slate-800'>
             <h3>Count: {countNo} </h3> 
             <h3>Turn: Player {playerNo} </h3> 
+            <h3>Winner: {winner}</h3>
         </div>
     </div>
   )

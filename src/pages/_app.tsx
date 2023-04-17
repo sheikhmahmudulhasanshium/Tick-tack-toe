@@ -16,7 +16,7 @@ export default function App({ Component, pageProps,router }: AppProps) {
     
     clicked()
   }
-  const [clicked] = useSound('sounds/Click.mp3',{volume:1})
+  const [clicked] = useSound('sounds/Click.mp3',{volume:0})
   return (
     
     <ThemeProvider attribute='class' >
