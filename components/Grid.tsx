@@ -11,38 +11,51 @@ export default function Grid()  {
         if(countNo>=4 && countNo<=9){
            //Check colum wise values
             //col-1
-            if(inputValue[0]===inputValue[3] && inputValue[6]===inputValue[3] ){
-                (inputValue[3]==="X")?setWinner("Player 1"):setWinner("Player 2")
+            if(inputValue[0]===inputValue[3] && inputValue[3]===inputValue[6] && inputValue[0]===inputValue[6]){
+                if(inputValue[3]==="X"){setWinner("Player 1")} 
+                if(inputValue[3]==="O") {setWinner("Player 2")}
             }
             //col-2
-            else if(inputValue[1]===inputValue[4] && inputValue[4]===inputValue[7]){
-                (inputValue[4]==="X")?setWinner("Player 1"):setWinner("Player 2")
+            else if(inputValue[1]===inputValue[4] && inputValue[4]===inputValue[7]&& inputValue[1]===inputValue[7]){
+                if(inputValue[7]==="X"){setWinner("Player 1")} 
+                if(inputValue[7]==="O") {setWinner("Player 2")}
+
             }
             //col-3
-            else if(inputValue[2]===inputValue[5] && inputValue[5]===inputValue[8]){
-                (inputValue[5]==="X")?setWinner("Player 1"):setWinner("Player 2")
+            else if(inputValue[2]===inputValue[5] && inputValue[5]===inputValue[8] && inputValue[2]===inputValue[8]){
+                if(inputValue[2]==="X"){setWinner("Player 1")} 
+                if(inputValue[2]==="O") {setWinner("Player 2")}
+
             }
         
                 //Check row wise values
-            else if(inputValue[0]===inputValue[1] && inputValue[1]===inputValue[2]){
-                        (inputValue[1]==="X")?setWinner("Player 1"):setWinner("Player 2")
-                    }
+                    //row-1
+            else if(inputValue[0]===inputValue[1] && inputValue[1]===inputValue[2] && inputValue[0]===inputValue[2]){
+                if(inputValue[1]==="X"){setWinner("Player 1")} 
+                if(inputValue[1]==="O") {setWinner("Player 2")}
+
+            }
                     //row-2
-            else if(inputValue[3]===inputValue[4] && inputValue[4]===inputValue[5]){
-                        (inputValue[4]==="X")?setWinner("Player 1"):setWinner("Player 2")
-                    }
+            else if(inputValue[3]===inputValue[4] && inputValue[4]===inputValue[5] && inputValue[3]===inputValue[5]){
+                if(inputValue[4]==="X"){setWinner("Player 1")} 
+                if(inputValue[4]==="O") {setWinner("Player 2")}
+
+            }
                     //row-3
-            else if(inputValue[6]===inputValue[7] && inputValue[7]===inputValue[8]){
-                        (inputValue[7]==="X")?setWinner("Player 1"):setWinner("Player 2")
-                    }
+            else if(inputValue[6]===inputValue[7] && inputValue[7]===inputValue[8] && inputValue[6]===inputValue[8]){
+                if(inputValue[7]==="X"){setWinner("Player 1")} 
+                if(inputValue[7]==="O") {setWinner("Player 2")}
+            }
                     
                         //check diagonal values
-            else if(inputValue[0]===inputValue[4] && inputValue[4]===inputValue[8]){
-                    (inputValue[4]==="X")?setWinner("Player 1"):setWinner("Player 2")
-                        }
-            else if(inputValue[2]===inputValue[4] && inputValue[4]===inputValue[6] ){
-                    (inputValue[4]==="X")?setWinner("Player 1"):setWinner("Player 2")
-                        }
+            else if(inputValue[0]===inputValue[4] && inputValue[4]===inputValue[8] && inputValue[0]===inputValue[8]){
+                if(inputValue[4]==="X"){setWinner("Player 1")} 
+                if(inputValue[4]==="O") {setWinner("Player 2")}
+            }
+            else if(inputValue[2]===inputValue[4] && inputValue[4]===inputValue[6] && inputValue[2]===inputValue[6]){
+                if(inputValue[4]==="X"){setWinner("Player 1")} 
+                if(inputValue[4]==="O") {setWinner("Player 2")}
+            }
             else{
                             setWinner("Draw")
                         }
