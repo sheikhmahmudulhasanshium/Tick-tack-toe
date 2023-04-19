@@ -10,6 +10,9 @@ export default function Grid()  {
     const[isGameOver,setIsGameOver]=useState(false)
     function resetGame(){
         setInputValue([' ',' ',' ',' ',' ',' ',' ',' ',' ']);
+        setCountNo(0);
+        setWinner(' ')
+        setIsGameOver(false);
     }
     function GridLogic(){
         console.log(countNo)
@@ -114,6 +117,7 @@ export default function Grid()  {
                         <h3>Winner </h3>
                         <FaTrophy className='mx-6 text-yellow-500 '/>
                         <h2>{winner}</h2>
+                        
                    </div>
                 }
                 {(winner==='Draw')&&
@@ -121,13 +125,11 @@ export default function Grid()  {
                         <h3>Draw</h3>
                     </div>
                 }
-                
+            
             </div>
-            <button className='flex items-center justify-center '>
-                <p>Reset</p><GrPowerReset/>
-            </button>
+            <div className='flex flex-col items-center justify-center gap-2 mt-4 space-x-2 bg-gradient-to-r from-blue-800 to-green-500 rounded-2xl'><button onClick={resetGame}><p>Reset</p><GrPowerReset/></button></div>
         </div>
-                
+               
     </div>
   }
   </div>
