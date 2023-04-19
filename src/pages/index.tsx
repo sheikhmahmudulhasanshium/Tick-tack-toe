@@ -12,7 +12,7 @@ export default function index()  {
     className='flex flex-col flex-grow px-6 pt-1 my-6 bg-slate-100 dark:bg-slate-500 dark:text-white ' >
       <div className='flex justify-center gap-2 my-3 text-2xl font-kaushan '>
        <h1>Tick-Tack-Toe</h1>
-       <Image src="/images/logo-shium.png"  alt='profile-pic' quality={100} width={30} height={30}/> 
+       <Image src="/images/logo-shium.png"  alt='profile-pic' quality={100} width={35} height={35}/> 
       </div>
       <div className='flex-grow p-4 mt-5 bg-shiumcustom dark:bg-slate-800' style={{marginLeft:'-1.5rem',marginRight:'-1.5rem'}}>
        <ScoreBoard/>

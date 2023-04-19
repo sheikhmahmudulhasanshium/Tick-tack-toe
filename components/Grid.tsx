@@ -8,18 +8,19 @@ export default function Grid()  {
     const [inputValue,setInputValue]=useState([' ',' ',' ',' ',' ',' ',' ',' ',' '])
     const[winner,setWinner]=useState(' ')
     const[isGameOver,setIsGameOver]=useState(false)
-    function resetGame(){
+    function resetGame(value: boolean){
         setInputValue([' ',' ',' ',' ',' ',' ',' ',' ',' ']);
         setCountNo(0);
         setWinner(' ')
-        setIsGameOver(false);
+        setIsGameOver(value)
+        
     }
     function GridLogic(){
-        console.log(countNo)
+        //console.log(countNo)
         //console.log(inputValue)
         
         //countNo range: 0-9
-        if(countNo===9||winner==='Player 1'||winner==='Player 2'||winner==='Draw'){
+        if(countNo>=8||winner==='Player 1'||winner==='Player 2'||winner==='Draw'){
             setIsGameOver(true)
         }
         if(countNo>=8&&winner!=='Player 1'&&winner!=='Player 2')
@@ -108,7 +109,7 @@ export default function Grid()  {
   }
   {//show result
     (isGameOver===true && (winner==='Draw'||winner==='Player 1'||winner==='Player 2'))&&
-    <div className='flex justify-center p-4 my-4 bg-gray-400 item-center text-slate-900 dark:text-white dark:bg-slate-800 font-kaushan rounded-2xl'>
+    <div className='flex justify-center p-4 m-2 my-4 bg-gray-400 item-center text-slate-900 dark:text-white dark:bg-slate-800 font-kaushan rounded-2xl '>
         <div className='flex-col px-2 py-3 text-2xl '>
             <h1 className='font-bold'>{`<<-----Game Over----->>`}</h1>
             <div className='flex items-center justify-center space-x-2 '>
@@ -127,7 +128,8 @@ export default function Grid()  {
                 }
             
             </div>
-            <div className='flex flex-col items-center justify-center gap-2 mt-4 space-x-2 bg-gradient-to-r from-blue-800 to-green-500 rounded-2xl'><button onClick={resetGame}><p>Reset</p><GrPowerReset/></button></div>
+            
+            <div className='flex flex-col items-center justify-center gap-2 py-1 mt-4 space-x-2 bg-gradient-to-r from-blue-800 to-green-500 rounded-2xl hover:dark:text-green-900' onClick={()=>resetGame(false)} ><button ><p>Reset</p><GrPowerReset className='mx-2 ' /></button></div>
         </div>
                
     </div>
