@@ -21,7 +21,7 @@ const Settings = () => {
   function toggleMusicButton(){
     
     setMusic(music===true?false:true)
-    music===false?playActive():playOff();
+    music===false?playOn():playOff();
     //while(music!==false){playActive();setMusicVolume(musicVolume===0?1:0)}
     //if(music===false){playOff()}
     setMusicVolume(musicVolume===0.5?0:0.5)
@@ -29,8 +29,7 @@ const Settings = () => {
   }
   
   const [music,setMusic]=useState(false); 
-  const [playActive]=useSound('/sounds/game-music-loop.mp3',{volume:musicVolume});
-  const [playOn]=useSound('/sounds/Click.mp3',{volume:0.5});
+  const [playOn]=useSound('/sounds/game-music-loop.mp3',{volume:musicVolume});
   const [playOff]=useSound('',{volume:0});
   
   const musicModeSymbol=music===true?<FaToggleOn className='text-3xl text-gray-800' />:<FaToggleOff className='text-3xl text-gray-800 '/>
